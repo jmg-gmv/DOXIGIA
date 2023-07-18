@@ -14,15 +14,46 @@
   "contributes": {
     "commands": [
       {
-        "command": "code-summarizer",
-        "title": "Generate Doxygen"
+        "command": "extension.doxigia",
+        "title": "DOXIGIA"
+      },
+      {
+        "command": "code-summarizer-doxygen",
+        "title": "Generate Doxygen comments"
+      }, 
+      {
+        "command": "inLineComments-comments",
+        "title": "Generate inLine comments"
+      }, 
+      {
+        "command": "code-headers",
+        "title": "Generate header comments"
+      },
+      {
+        "command": "code-explanation",
+        "title": "Explain and comments this portion of code"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorHasSelection",
-          "command": "code-summarizer",
+          "command": "code-summarizer-doxygen",
+          "group": "9_cutcopypaste"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "inLineComments-comments",
+          "group": "9_cutcopypaste"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "code-headers",
+          "group": "9_cutcopypaste"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "code-explanation",
           "group": "9_cutcopypaste"
         }
       ]
@@ -52,7 +83,7 @@
     "mocha": "^10.2.0",
     "ts-loader": "^9.4.3",
     "typescript": "^5.1.3",
-    "webpack": "^5.85.0",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
